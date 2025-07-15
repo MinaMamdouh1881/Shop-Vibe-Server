@@ -14,6 +14,10 @@ export default async function signupController(req: Request, res: Response) {
 
     const existingUser = await User.findOne({ email });
 
+    if (existingUser && existingUser.googleId) {
+      res.status(400).json({ error: 'Please Login With Google' });
+      return;
+    }
     if (existingUser) {
       res.status(400).json({ error: 'User already exists' });
       return;
