@@ -1,25 +1,40 @@
 import { Router } from 'express';
 import passport from 'passport';
+import {
+  loginController,
+  signupController,
+  forgetPassword,
+  resetPassword,
+} from '../controllers/auth.controller';
 require('dotenv').config();
 
 const router = Router();
 
-router.get(
-  '/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+//google login
+
+router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 
 router.get(
   '/google/callback',
   passport.authenticate('google', {
     successRedirect: `${process.env.SERVER_URI}/auth/login/success`,
-    failureRedirect: '/auth/login/faild',
+    failureRedirect: '/auth/login/failed',
+  })
+);
+
+//facebook login
+
+router.get('/facebook', passport.authenticate('facebook'));
+
+router.get(
+  '/facebook/callback',
+  passport.authenticate('facebook', {
+    successRedirect: `${process.env.SERVER_URI}/auth/login/success`,
+    failureRedirect: '/login',
   })
 );
 
 router.get('/login/success', (req, res) => {
-  console.log('login google success', req.user);
-
   if (req.user) {
     res.redirect(`${process.env.CLIENT_URI!}?user=${JSON.stringify(req.user)}`);
   } else {
@@ -30,8 +45,15 @@ router.get('/login/success', (req, res) => {
   }
 });
 
-router.get('/login/faild', (_, res) => {
+router.get('/login/failed', (_, res) => {
   res.status(401).json({ error: 'Login failed' });
 });
+
+//normal login
+
+router.post('/login', loginController);
+router.post('/signup', signupController);
+router.post('/forget-password', forgetPassword);
+router.post('/reset-password', resetPassword);
 
 export default router;

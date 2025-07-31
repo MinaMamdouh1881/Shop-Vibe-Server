@@ -1,8 +1,9 @@
 import passport from 'passport';
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 import User from '../modules/user.schema';
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 passport.use(
   new GoogleStrategy(
@@ -14,7 +15,7 @@ passport.use(
     async (
       accessToken: unknown,
       refreshToken: unknown,
-      profile: { id: string; displayName: string; emails: { value: string }[] },
+      profile: { id: string; displayName: string },
       done: Function
     ) => {
       try {
@@ -23,9 +24,40 @@ passport.use(
           user = await User.create({
             googleId: profile.id,
             userName: profile.displayName,
-            email: profile.emails[0].value,
           });
         }
+        done(null, user);
+      } catch (err) {
+        done(err, null);
+      }
+    }
+  )
+);
+
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      callbackURL: `${process.env.SERVER_URI}/auth/facebook/callback`,
+      profileFields: ['id', 'displayName'],
+    },
+    async (
+      accessToken: unknown,
+      refreshToken: unknown,
+      profile: { id: string; displayName: string },
+      done: Function
+    ) => {
+      try {
+        let user = await User.findOne({ facebookId: profile.id });
+
+        if (!user) {
+          user = await User.create({
+            facebookId: profile.id,
+            userName: profile.displayName,
+          });
+        }
+
         done(null, user);
       } catch (err) {
         done(err, null);

@@ -18,7 +18,9 @@
     "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.1",
+    "nodemailer": "^7.0.5",
     "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@types/express-session": "^1.18.2",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.7",
+    "@types/nodemailer": "^6.4.17",
     "@types/passport": "^1.0.17",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",

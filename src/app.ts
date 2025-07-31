@@ -3,13 +3,11 @@ import session from 'express-session';
 import cors from 'cors';
 import passport from 'passport';
 import connectToDb from './lib/connectToDb';
-import loginRouter from './routes/login.route';
-import signupRouter from './routes/signup.route';
 import authRouter from './routes/auth.route';
 import verifyToken from './middlewares/verifyToken';
-import './config/passport';
-
 require('dotenv').config();
+import './config/passport';
+import productRouter from './routes/product.route';
 
 const app = express();
 
@@ -27,6 +25,7 @@ app.use(
 
 app.use(cors({ origin: process.env.CLIENT_URI, credentials: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,9 +35,7 @@ connectToDb();
 app.get('/', verifyToken, (req, res) => {
   res.send('Welcome');
 });
-
-app.use('/login', loginRouter);
-app.use('/signup', signupRouter);
 app.use('/auth', authRouter);
+app.use('/products', productRouter);
 
 export default app;
