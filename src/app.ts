@@ -8,6 +8,7 @@ import verifyToken from './middlewares/verifyToken';
 require('dotenv').config();
 import './config/passport';
 import productRouter from './routes/product.route';
+import cartAndFavRouter from './routes/cartAndFav.route';
 
 const app = express();
 
@@ -37,5 +38,6 @@ app.get('/', verifyToken, (req, res) => {
 });
 app.use('/auth', authRouter);
 app.use('/products', productRouter);
+app.use('/cartAndFav', cartAndFavRouter);
 
 export default app;

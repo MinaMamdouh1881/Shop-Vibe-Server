@@ -14,10 +14,18 @@ const userSchema = new mongoose.Schema(
       default: 'user',
     },
     myFavorites: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Product', default: [] },
+      { type: mongoose.Schema.Types.ObjectId, ref: 'products', default: [] },
     ],
     myCart: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Product', default: [] },
+      {
+        productId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'products',
+          required: true,
+        },
+        quantity: { type: Number, default: 1, min: 1, required: true },
+        size: { type: String, default: '', required: true },
+      },
     ],
   },
   { timestamps: true }

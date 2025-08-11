@@ -69,7 +69,7 @@ export async function getProducts(req: Request, res: Response) {
   try {
     if (!category) {
       const products = await Products.find({ gender });
-      res.status(404).json({ success: true, products });
+      res.status(200).json({ success: true, products });
       return;
     }
 
@@ -80,8 +80,8 @@ export async function getProducts(req: Request, res: Response) {
       const products = await Products.find({
         gender,
         category: category.trim(),
-      });
-      res.status(404).json({ success: true, products });
+      }).select('name price image description');
+      res.status(200).json({ success: true, products });
       return;
     }
 
@@ -104,7 +104,9 @@ export async function getProductByID(req: Request, res: Response) {
   }
 
   try {
-    const product = await Products.findById(id);
+    const product = await Products.findById(id).select(
+      '-createdAt -updatedAt -__v -sales'
+    );
     if (!product) {
       res.status(404).json({ success: false, error: 'Product Not Found' });
       return;
@@ -121,8 +123,12 @@ export async function getProductByID(req: Request, res: Response) {
 // Get featured In Man
 export async function getFeaturedMan(req: Request, res: Response) {
   try {
-    const products = await Products.find({ featured: true, gender: 'men' });
+    const products = await Products.find({
+      featured: true,
+      gender: 'men',
+    }).select('name price image description');
     res.status(200).json({ success: true, products });
+    return;
   } catch (error) {
     console.log('Error while getting featured products in man', error);
     res
@@ -135,8 +141,12 @@ export async function getFeaturedMan(req: Request, res: Response) {
 // Get featured In Man
 export async function getFeaturedWoman(req: Request, res: Response) {
   try {
-    const products = await Products.find({ featured: true, gender: 'women' });
+    const products = await Products.find({
+      featured: true,
+      gender: 'women',
+    }).select('name price image description');
     res.status(200).json({ success: true, products });
+    return;
   } catch (error) {
     console.log('Error while getting featured products in man', error);
     res
@@ -149,11 +159,12 @@ export async function getFeaturedWoman(req: Request, res: Response) {
 // Get best sales In Man
 export async function getBestSalesMan(req: Request, res: Response) {
   try {
-    // const products = await Products.find({ featured: true, gender: 'women' });
     const products = await Products.find({ sales: { $gt: 0 }, gender: 'men' })
+      .select('name price image description')
       .sort({ sales: -1 })
       .limit(20);
     res.status(200).json({ success: true, products });
+    return;
   } catch (error) {
     console.log('Error while getting featured products in man', error);
     res
@@ -165,11 +176,79 @@ export async function getBestSalesMan(req: Request, res: Response) {
 // Get best sales In Woman
 export async function getBestSalesWoman(req: Request, res: Response) {
   try {
-    // const products = await Products.find({ featured: true, gender: 'women' });
     const products = await Products.find({ sales: { $gt: 0 }, gender: 'women' })
+      .select('name price image description')
       .sort({ sales: -1 })
       .limit(20);
     res.status(200).json({ success: true, products });
+    return;
+  } catch (error) {
+    console.log('Error while getting featured products in man', error);
+    res
+      .status(500)
+      .json({ error: 'internal error in getting featured products in man' });
+    return;
+  }
+}
+
+//Get New Arrival Product
+export async function getNewArrival(req: Request, res: Response) {
+  try {
+    const pants = await Products.find({ category: 'pants' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    const shoes = await Products.find({ category: 'shoes' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    const shirt = await Products.find({ category: 'shirt' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    const tShirt = await Products.find({ category: 't-shirt' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    const skirt = await Products.find({ category: 'skirt' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    const heels = await Products.find({ category: 'heels' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(2)
+      .select('name price image description');
+    const blouse = await Products.find({ category: 'blouse' })
+      .sort({
+        updatedAt: -1,
+      })
+      .limit(3)
+      .select('name price image description');
+    res.status(200).json({
+      success: true,
+      products: [
+        ...shoes,
+        ...pants,
+        ...shirt,
+        ...tShirt,
+        ...skirt,
+        ...heels,
+        ...blouse,
+      ],
+    });
+    return;
   } catch (error) {
     console.log('Error while getting featured products in man', error);
     res

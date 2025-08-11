@@ -1,13 +1,11 @@
 import jwt from 'jsonwebtoken';
 import { Response, Request, NextFunction } from 'express';
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: User;
-    }
-  }
-}
+export type TokenPayload = {
+  id: string;
+  email: string;
+  rule: 'user' | 'admin';
+};
 
 export default function verifyToken(
   req: Request,
@@ -15,15 +13,17 @@ export default function verifyToken(
   next: NextFunction
 ) {
   try {
-    const token = req.headers.token?.toString().split(' ')[1];
+    const token = req.headers.authorization?.toString().split(' ')[1];
     if (!token) {
       res.status(404).json({ error: 'Auth' });
       return;
     }
-    const data = jwt.verify(token, process.env.JWT_SECRET!);
+
+    const data = jwt.verify(token, process.env.JWT_SECRET!) as TokenPayload;
+
     req.user = data;
     next();
   } catch (error) {
-    throw error;
+    res.status(401).json({ error: 'Invalid token' });
   }
 }

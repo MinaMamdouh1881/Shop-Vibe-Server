@@ -30,13 +30,18 @@ router.get(
   '/facebook/callback',
   passport.authenticate('facebook', {
     successRedirect: `${process.env.SERVER_URI}/auth/login/success`,
-    failureRedirect: '/login',
+    failureRedirect: `${process.env.CLIENT_URI}/login`,
   })
 );
 
 router.get('/login/success', (req, res) => {
   if (req.user) {
-    res.redirect(`${process.env.CLIENT_URI!}?user=${JSON.stringify(req.user)}`);
+    res.redirect(
+      `${process.env.CLIENT_URI!}?res=${encodeURIComponent(
+        JSON.stringify(req.user)
+      )}`
+    );
+    // res.json(req.user);
   } else {
     res.status(401).json({
       success: false,

@@ -7,6 +7,7 @@ import {
   getFeaturedWoman,
   getBestSalesMan,
   getBestSalesWoman,
+  getNewArrival,
 } from '../controllers/product.controller';
 
 const router = Router();
@@ -18,5 +19,6 @@ router.get('/getfeaturedman', getFeaturedMan);
 router.get('/getfeaturedwoman', getFeaturedWoman);
 router.get('/getbestsalesman', getBestSalesMan);
 router.get('/getbestsaleswoman', getBestSalesWoman);
+router.get('/getNewArrival', getNewArrival);
 
 export default router;

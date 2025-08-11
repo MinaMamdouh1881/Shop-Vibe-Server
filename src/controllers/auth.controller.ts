@@ -7,74 +7,61 @@ import sendEmail from '../lib/sendEmail';
 export async function loginController(req: Request, res: Response) {
   try {
     const { email, password } = req.body;
-
     if (!email || !password) {
-      res.status(400).json({ error: 'Email and password are required' });
+      res
+        .status(400)
+        .json({ success: false, error: 'Email and password are required' });
       return;
     }
-
-    const user = await User.findOne({ email });
-
+    const user = await User.findOne({ email })
+      .populate('myCart.productId', 'name price images')
+      .populate('myFavorites', 'name price images');
     if (!user) {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ success: false, error: 'User not found' });
       return;
     }
-    if (user.googleId) {
-      res.status(400).json({ error: 'Please Login With Google' });
-      return;
-    }
-
     const hashedPassword = hashPassword(password, user.salt);
     if (user.password !== hashedPassword) {
-      res.status(401).json({ error: 'Invalid password' });
+      res.status(401).json({ success: false, error: 'Invalid password' });
       return;
     }
-
     const token = await createToken({
       id: user._id,
-      email: user.email,
       rule: user.rule,
     });
 
-    res
-      .status(200)
-      .set({
-        authorization: `Bearer ${token}`,
-      })
-      .json({
-        message: 'Login successful',
-        user: {
-          id: user._id,
-          userName: user.userName,
-          email: user.email,
-          rule: user.rule,
-          myFavorites: user.myFavorites,
-          myCart: user.myCart,
-        },
-      });
+    res.status(200).json({
+      success: true,
+      token,
+      user: {
+        id: user._id,
+        userName: user.userName,
+        rule: user.rule,
+        myFavorites: user.myFavorites,
+        myCart: user.myCart,
+      },
+    });
   } catch (error) {
     console.log('Error in login route:', error);
-    res.status(500).json({ error: 'An error occurred during login' });
+    res
+      .status(500)
+      .json({ success: false, error: 'An error occurred during login' });
   }
 }
 
 export async function signupController(req: Request, res: Response) {
   try {
     const { userName, email, password } = req.body;
-
     if (!userName || !email || !password) {
-      res.status(400).json({ error: 'All fields are required' });
+      res
+        .status(400)
+        .json({ success: false, error: 'All fields are required' });
       return;
     }
 
     const existingUser = await User.findOne({ email });
-
-    if (existingUser && existingUser.googleId) {
-      res.status(400).json({ error: 'Please Login With Google' });
-      return;
-    }
     if (existingUser) {
-      res.status(400).json({ error: 'User already exists' });
+      res.status(400).json({ success: false, error: 'User already exists' });
       return;
     }
 
@@ -90,30 +77,26 @@ export async function signupController(req: Request, res: Response) {
 
     const token = await createToken({
       id: newUser._id,
-      email: newUser.email,
       rule: newUser.rule,
     });
 
-    res
-      .status(201)
-      .set({
-        Authorization: `Bearer ${token}`,
-      })
-      .json({
-        message: 'User created successfully',
-        user: {
-          id: newUser._id,
-          userName: newUser.userName,
-          email: newUser.email,
-          rule: newUser.rule,
-          myFavorites: newUser.myFavorites,
-          myCart: newUser.myCart,
-        },
-      });
+    res.status(201).json({
+      success: true,
+      token,
+      user: {
+        id: newUser._id,
+        userName: newUser.userName,
+        rule: newUser.rule,
+        myFavorites: newUser.myFavorites,
+        myCart: newUser.myCart,
+      },
+    });
     return;
   } catch (error) {
     console.log('Error in login route:', error);
-    res.status(500).json({ error: 'An error occurred during login' });
+    res
+      .status(500)
+      .json({ success: false, error: 'An error occurred during login' });
     return;
   }
 }
@@ -121,16 +104,13 @@ export async function signupController(req: Request, res: Response) {
 export async function forgetPassword(req: Request, res: Response) {
   try {
     const { email }: { email: string } = req.body;
-
     if (!email) {
-      res.status(400).json({ error: 'Email required' });
+      res.status(400).json({ success: false, error: 'Email required' });
       return;
     }
-
     const existingUser = await User.findOne({ email });
-
     if (!existingUser) {
-      res.status(404).json({ error: 'Email Not Found' });
+      res.status(404).json({ success: false, error: 'Email Not Found' });
       return;
     }
 
@@ -148,11 +128,14 @@ export async function forgetPassword(req: Request, res: Response) {
       content: `Please Click To The Link To Reset Your Password ${process.env.CLIENT_URI}/reset-password?token=${token}`,
     });
 
-    res.status(200).json({ msg: 'Please Check Your Email You Have Only 15m' });
+    res.status(200).json({
+      success: true,
+      msg: 'Please Check Your Email You Have Only 15m',
+    });
     return;
   } catch (error) {
     console.log('Error in forgetPassword', error);
-    res.status(500).json({ error: 'An error occurred' });
+    res.status(500).json({ success: false, error: 'An error occurred' });
     return;
   }
 }
@@ -176,21 +159,26 @@ export async function resetPassword(req: Request, res: Response) {
       password: hashedPassword,
     });
 
-    res.status(200).json({ msg: 'Reset Password Successfully' });
+    res.status(200).json({ success: true, msg: 'Reset Password Successfully' });
     return;
   } catch (error) {
     if (error instanceof TokenExpiredError) {
-      res.status(403).json({ error: 'You Are Late Please Try Again' });
+      res
+        .status(403)
+        .json({ success: false, error: 'You Are Late Please Try Again' });
       return;
     }
     if (error instanceof JsonWebTokenError) {
-      res
-        .status(404)
-        .json({ error: 'Some Thing Went Wrong Please Try Again Later' });
+      res.status(404).json({
+        success: false,
+        error: 'Some Thing Went Wrong Please Try Again Later',
+      });
       return;
     }
     console.log('Error in login route:', error);
-    res.status(500).json({ error: 'An error occurred during login' });
+    res
+      .status(500)
+      .json({ success: false, error: 'An error occurred during login' });
     return;
   }
 }

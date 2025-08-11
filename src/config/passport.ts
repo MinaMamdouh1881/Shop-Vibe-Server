@@ -2,6 +2,7 @@ import passport from 'passport';
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 import User from '../modules/user.schema';
+import createToken from '../lib/createToken';
 // import dotenv from 'dotenv';
 // dotenv.config();
 
@@ -73,7 +74,23 @@ passport.serializeUser((user: any, done) => {
 passport.deserializeUser(async (id: string, done) => {
   try {
     const user = await User.findById(id);
-    done(null, user);
+
+    const token = await createToken({
+      id: user._id,
+      rule: user.rule,
+    });
+    const res = {
+      success: true,
+      token,
+      user: {
+        id: user._id,
+        userName: user.userName,
+        rule: user.rule,
+        myFavorites: user.myFavorites,
+        myCart: user.myCart,
+      },
+    };
+    done(null, res);
   } catch (err) {
     done(err, null);
   }
