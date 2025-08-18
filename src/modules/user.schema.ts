@@ -13,20 +13,6 @@ const userSchema = new mongoose.Schema(
       enum: ['user', 'admin'],
       default: 'user',
     },
-    myFavorites: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'products', default: [] },
-    ],
-    myCart: [
-      {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'products',
-          required: true,
-        },
-        quantity: { type: Number, default: 1, min: 1, required: true },
-        size: { type: String, default: '', required: true },
-      },
-    ],
   },
   { timestamps: true }
 );

@@ -4,6 +4,10 @@ import { createSalt, hashPassword } from '../lib/passwords';
 import createToken from '../lib/createToken';
 import jwt, { TokenExpiredError, JsonWebTokenError } from 'jsonwebtoken';
 import sendEmail from '../lib/sendEmail';
+import Cart from '../modules/cart.schema';
+import WishList from '../modules/wishlist.schema';
+
+//LOGIN
 export async function loginController(req: Request, res: Response) {
   try {
     const { email, password } = req.body;
@@ -13,9 +17,7 @@ export async function loginController(req: Request, res: Response) {
         .json({ success: false, error: 'Email and password are required' });
       return;
     }
-    const user = await User.findOne({ email })
-      .populate('myCart.productId', 'name price images')
-      .populate('myFavorites', 'name price images');
+    const user = await User.findOne({ email });
     if (!user) {
       res.status(404).json({ success: false, error: 'User not found' });
       return;
@@ -25,10 +27,20 @@ export async function loginController(req: Request, res: Response) {
       res.status(401).json({ success: false, error: 'Invalid password' });
       return;
     }
-    const token = await createToken({
-      id: user._id,
-      rule: user.rule,
-    });
+    const [token, cart, wishList] = await Promise.all([
+      createToken({
+        id: user._id,
+        rule: user.rule,
+      }),
+      Cart.findOne({ user: user._id }).populate(
+        'items.product',
+        'name price image'
+      ),
+      WishList.findOne({ user: user._id }).populate(
+        'items',
+        'name price image'
+      ),
+    ]);
 
     res.status(200).json({
       success: true,
@@ -37,8 +49,8 @@ export async function loginController(req: Request, res: Response) {
         id: user._id,
         userName: user.userName,
         rule: user.rule,
-        myFavorites: user.myFavorites,
-        myCart: user.myCart,
+        myFavorites: wishList.items,
+        myCart: cart.items,
       },
     });
   } catch (error) {
@@ -48,10 +60,11 @@ export async function loginController(req: Request, res: Response) {
       .json({ success: false, error: 'An error occurred during login' });
   }
 }
-
+//SIGNUP
 export async function signupController(req: Request, res: Response) {
   try {
-    const { userName, email, password } = req.body;
+    const { userName, email, password, cartItems, wishListItems } = req.body;
+
     if (!userName || !email || !password) {
       res
         .status(400)
@@ -75,10 +88,31 @@ export async function signupController(req: Request, res: Response) {
       salt,
     });
 
-    const token = await createToken({
-      id: newUser._id,
-      rule: newUser.rule,
+    const newWishList = new WishList({
+      user: newUser._id,
+      items: wishListItems || [],
     });
+    const newCart = new Cart({
+      user: newUser._id,
+      items: cartItems || [],
+    });
+
+    const [token, cart, wishList] = await Promise.all([
+      createToken({
+        id: newUser._id,
+        rule: newUser.rule,
+      }),
+      newCart.save(),
+      newWishList.save(),
+    ]);
+    const populatedWishList = await wishList.populate(
+      'items',
+      'name price image'
+    );
+    const populatedCart = await cart.populate(
+      'items.product',
+      'name price image'
+    );
 
     res.status(201).json({
       success: true,
@@ -87,8 +121,8 @@ export async function signupController(req: Request, res: Response) {
         id: newUser._id,
         userName: newUser.userName,
         rule: newUser.rule,
-        myFavorites: newUser.myFavorites,
-        myCart: newUser.myCart,
+        myFavorites: populatedWishList.items,
+        myCart: populatedCart.items,
       },
     });
     return;

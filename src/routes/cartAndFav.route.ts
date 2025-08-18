@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { saveCart, saveFav } from '../controllers/cartAndFave.controller';
+import { saveCart, saveFav } from '../controllers/cartAndFav.controller';
 import verifyToken from '../middlewares/verifyToken';
 
 const router = Router();

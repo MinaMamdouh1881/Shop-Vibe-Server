@@ -3,8 +3,8 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 import User from '../modules/user.schema';
 import createToken from '../lib/createToken';
-// import dotenv from 'dotenv';
-// dotenv.config();
+import Cart from '../modules/cart.schema';
+import WishList from '../modules/wishlist.schema';
 
 passport.use(
   new GoogleStrategy(
@@ -57,6 +57,10 @@ passport.use(
             facebookId: profile.id,
             userName: profile.displayName,
           });
+          await Promise.all([
+            Cart.create({ user: user._id }),
+            WishList.create({ user: user._id }),
+          ]);
         }
 
         done(null, user);
@@ -75,10 +79,21 @@ passport.deserializeUser(async (id: string, done) => {
   try {
     const user = await User.findById(id);
 
-    const token = await createToken({
-      id: user._id,
-      rule: user.rule,
-    });
+    const [token, cart, wishList] = await Promise.all([
+      createToken({
+        id: user._id,
+        rule: user.rule,
+      }),
+      Cart.findOne({ user: user._id }).populate(
+        'items.product',
+        'name price image'
+      ),
+      WishList.findOne({ user: user._id }).populate(
+        'items',
+        'name price image'
+      ),
+    ]);
+
     const res = {
       success: true,
       token,
@@ -86,8 +101,8 @@ passport.deserializeUser(async (id: string, done) => {
         id: user._id,
         userName: user.userName,
         rule: user.rule,
-        myFavorites: user.myFavorites,
-        myCart: user.myCart,
+        myFavorites: wishList.items,
+        myCart: cart.items,
       },
     };
     done(null, res);
