@@ -9,6 +9,7 @@ require('dotenv').config();
 import './config/passport';
 import productRouter from './routes/product.route';
 import cartAndFavRouter from './routes/cartAndFav.route';
+import checkoutRouter from './routes/checkout.route';
 
 const app = express();
 
@@ -24,7 +25,14 @@ app.use(
   })
 );
 
-app.use(cors({ origin: process.env.CLIENT_URI, credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URI, credentials: true }));
+app.use(
+  cors({
+    origin: '*',
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -33,11 +41,16 @@ app.use(passport.session());
 
 connectToDb();
 
-app.get('/', verifyToken, (req, res) => {
+app.get('/', (req, res) => {
   res.send('Welcome');
 });
 app.use('/auth', authRouter);
 app.use('/products', productRouter);
 app.use('/cartAndFav', cartAndFavRouter);
+// app.use('/checkout', (req, res) => {
+//   res.json({ msg: 'Welcome' });
+//   return;
+// });
+app.use('/checkout', checkoutRouter);
 
 export default app;
