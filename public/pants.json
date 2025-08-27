@@ -1,0 +1,185 @@
+[
+  {
+    "name": "Men's Classic Chino Pants",
+    "description": "Versatile chino pants for men, offering a comfortable fit and timeless style for casual or semi-formal occasions.",
+    "price": 26.5,
+    "image": "/pants/pants-1.webp",
+    "size": ["36", "38", "40", "42", "44"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Slim Fit Jeans",
+    "description": "Stylish slim fit jeans crafted for a modern look, perfect for everyday wear with a sleek silhouette.",
+    "price": 84.68,
+    "image": "/pants/pants-2.webp",
+    "size": ["38", "40", "42", "44"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Casual Cargo Pants",
+    "description": "Durable cargo pants with multiple pockets, ideal for a rugged and practical casual style.",
+    "price": 47.21,
+    "image": "/pants/pants-3.webp",
+    "size": ["36", "38", "40", "42"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Formal Dress Pants",
+    "description": "Elegant dress pants designed for a sharp and professional appearance, perfect for formal events.",
+    "price": 108.02,
+    "image": "/pants/pants-4.webp",
+    "size": ["36", "38", "40", "44"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Tailored Fit Trousers",
+    "description": "Tailored trousers offering a refined fit and premium comfort, suitable for both office and casual settings.",
+    "price": 147.28,
+    "image": "/pants/pants-5.webp",
+    "size": ["38", "40", "42", "44"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Relaxed Fit Jeans",
+    "description": "Comfortable relaxed fit jeans, ideal for a laid-back style and all-day wear.",
+    "price": 126.47,
+    "image": "/pants/pants-6.webp",
+    "size": ["36", "38", "40", "42", "44"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Lightweight Chinos",
+    "description": "Lightweight chino pants, perfect for warm weather and a versatile casual look.",
+    "price": 66.22,
+    "image": "/pants/pants-7.webp",
+    "size": ["38", "40"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Denim Straight Fit Pants",
+    "description": "Classic straight fit denim pants, combining durability and style for everyday wear.",
+    "price": 125.19,
+    "image": "/pants/pants-8.webp",
+    "size": ["36", "38", "42", "44"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Casual Stretch Pants",
+    "description": "Stretch pants designed for flexibility and comfort, perfect for an active lifestyle.",
+    "price": 113.71,
+    "image": "/pants/pants-9.webp",
+    "size": ["36", "38", "44"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Premium Dress Trousers",
+    "description": "Premium dress trousers with a sophisticated cut, ideal for formal occasions and professional settings.",
+    "price": 146.13,
+    "image": "/pants/pants-10.webp",
+    "size": ["38", "40", "44"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Rugged Cargo Trousers",
+    "description": "Rugged cargo trousers with a sturdy design, perfect for outdoor activities and casual wear.",
+    "price": 64.69,
+    "image": "/pants/pants-11.webp",
+    "size": ["36", "38", "40", "44"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Slim Fit Chino Pants",
+    "description": "Sleek and modern slim fit chino pants, perfect for a polished casual or semi-formal look.",
+    "price": 45.72,
+    "image": "/pants/pants-12.webp",
+    "size": ["38", "40", "42", "44"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Relaxed Fit Cargo Pants",
+    "description": "Comfortable cargo pants with a relaxed fit, designed for practicality and a rugged style.",
+    "price": 24.74,
+    "image": "/pants/pants-13.webp",
+    "size": ["38", "40", "42"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Premium Denim Jeans",
+    "description": "High-quality denim jeans with a versatile fit, ideal for both casual and smart-casual occasions.",
+    "price": 100.69,
+    "image": "/pants/pants-14.webp",
+    "size": ["36", "38", "40", "42", "44"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Formal Straight Trousers",
+    "description": "Elegant straight-cut trousers, crafted for a professional and sophisticated appearance.",
+    "price": 99.86,
+    "image": "/pants/pants-15.webp",
+    "size": ["38", "40", "42", "44"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Athletic Fit Pants",
+    "description": "Athletic fit pants designed for flexibility and comfort, perfect for an active lifestyle.",
+    "price": 118.71,
+    "image": "/pants/pants-16.webp",
+    "size": ["36", "38", "42", "44"],
+    "category": "pants",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Classic Dress Pants",
+    "description": "Classic dress pants with a tailored fit, ideal for formal events and office wear.",
+    "price": 77.75,
+    "image": "/pants/pants-17.webp",
+    "size": ["38", "40", "42"],
+    "category": "pants",
+    "featured": true,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Casual Linen Pants",
+    "description": "Lightweight linen pants, offering breathability and a relaxed style for warm weather.",
+    "price": 54.48,
+    "image": "/pants/pants-18.webp",
+    "size": ["38", "40"],
+    "category": "pants",
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Stretch Cargo Trousers",
+    "description": "Durable cargo trousers with stretch fabric, combining functionality with a modern fit.",
+    "price": 101.6,
+    "image": "/pants/pants-19.webp",
+    "size": ["38", "40", "42", "44"],
+    "category": "pants",
+    "gender": "men"
+  }
+]

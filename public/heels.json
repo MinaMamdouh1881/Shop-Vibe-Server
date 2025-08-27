@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Elegant Stiletto Heels",
+    "description": "Sophisticated high-heeled stilettos with a sleek design, perfect for formal occasions or a stylish night out.",
+    "price": 138.36,
+    "image": "/heels/heels-1.webp",
+    "size": ["38", "39", "40", "41", "42"],
+    "category": "heels",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Chic Block Heel Sandals",
+    "description": "Comfortable yet trendy block heel sandals, ideal for casual elegance and all-day wear.",
+    "price": 31.81,
+    "image": "/heels/heels-2.webp",
+    "size": ["36", "38", "39", "40"],
+    "category": "heels",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Classic Pointed-Toe Pumps",
+    "description": "Timeless pointed-toe pumps that add a touch of sophistication to any outfit, perfect for office or evening wear.",
+    "price": 49.6,
+    "image": "/heels/heels-3.webp",
+    "size": ["36", "37", "39", "40"],
+    "category": "heels",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Strappy Evening Heels",
+    "description": "Glamorous strappy heels designed to elevate your evening look with a touch of sparkle and elegance.",
+    "price": 141.72,
+    "image": "/heels/heels-4.webp",
+    "size": ["38", "39", "40"],
+    "category": "heels",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Modern Wedge Heels",
+    "description": "Stylish wedge heels offering both comfort and height, perfect for a chic daytime or evening ensemble.",
+    "price": 125.38,
+    "image": "/heels/heels-5.webp",
+    "size": ["36", "37", "40"],
+    "category": "heels",
+    "featured": true,
+    "gender": "women"
+  }
+]

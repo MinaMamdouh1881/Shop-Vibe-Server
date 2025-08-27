@@ -1,0 +1,129 @@
+[
+  {
+    "name": "Men's Classic Cotton T-Shirt",
+    "description": "A timeless cotton T-shirt, offering comfort and versatility for everyday casual wear.",
+    "price": 139.81,
+    "image": "/t-shirt/t-shirt-1.webp",
+    "size": ["SM", "MD", "XL", "2X"],
+    "category": "t-shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Graphic Print T-Shirt",
+    "description": "A stylish graphic print T-shirt, perfect for adding a bold statement to your casual wardrobe.",
+    "price": 29.46,
+    "image": "/t-shirt/t-shirt-2.webp",
+    "size": ["XL", "2X"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Slim Fit Crew Neck T-Shirt",
+    "description": "A slim fit crew neck T-shirt, designed for a modern and sleek casual look.",
+    "price": 130.35,
+    "image": "/t-shirt/t-shirt-3.webp",
+    "size": ["SM", "MD", "XL", "2X"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Casual V-Neck T-Shirt",
+    "description": "A comfortable V-neck T-shirt, ideal for relaxed outings and everyday wear.",
+    "price": 141.48,
+    "image": "/t-shirt/t-shirt-4.webp",
+    "size": ["SM", "MD", "LG"],
+    "category": "t-shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Athletic Fit T-Shirt",
+    "description": "An athletic fit T-shirt, crafted for flexibility and comfort during active lifestyles.",
+    "price": 104.9,
+    "image": "/t-shirt/t-shirt-5.webp",
+    "size": ["MD", "XL"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Premium Cotton T-Shirt",
+    "description": "A premium cotton T-shirt, offering superior softness and durability for all-day comfort.",
+    "price": 44.29,
+    "image": "/t-shirt/t-shirt-6.webp",
+    "size": ["MD", "XL", "2X"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Striped Casual T-Shirt",
+    "description": "A trendy striped T-shirt, perfect for a casual and stylish look.",
+    "price": 128.52,
+    "image": "/t-shirt/t-shirt-7.webp",
+    "size": ["SM", "MD", "LG"],
+    "category": "t-shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Relaxed Fit T-Shirt",
+    "description": "A relaxed fit T-shirt, ideal for a laid-back style and maximum comfort.",
+    "price": 143.18,
+    "image": "/t-shirt/t-shirt-8.webp",
+    "size": ["MD", "LG"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Performance T-Shirt",
+    "description": "A performance T-shirt designed for workouts, offering breathability and moisture-wicking fabric.",
+    "price": 85.79,
+    "image": "/t-shirt/t-shirt-9.webp",
+    "size": ["SM", "MD", "LG", "2X"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Minimalist T-Shirt",
+    "description": "A minimalist T-shirt with a clean design, perfect for a modern and understated look.",
+    "price": 42.3,
+    "image": "/t-shirt/t-shirt-10.webp",
+    "size": ["SM", "MD", "LG", "2X"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Bold Print T-Shirt",
+    "description": "A vibrant T-shirt with a bold print, ideal for standing out in casual settings.",
+    "price": 86.89,
+    "image": "/t-shirt/t-shirt-11.webp",
+    "size": ["SM", "MD", "LG", "XL"],
+    "category": "t-shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Classic Polo T-Shirt",
+    "description": "A classic polo T-shirt, combining casual comfort with a refined and polished style.",
+    "price": 117.26,
+    "image": "/t-shirt/t-shirt-12.webp",
+    "size": ["MD", "LG", "XL"],
+    "category": "t-shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Henley T-Shirt",
+    "description": "A stylish Henley T-shirt with button details, perfect for a casual yet sophisticated look.",
+    "price": 122.27,
+    "image": "/t-shirt/t-shirt-13.webp",
+    "size": ["SM", "XL"],
+    "category": "t-shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  }
+]

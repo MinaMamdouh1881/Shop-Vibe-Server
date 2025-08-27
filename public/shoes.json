@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Classic Leather Dress Shoes",
+    "description": "Timeless leather dress shoes, perfect for formal occasions or professional settings.",
+    "price": 85.08,
+    "image": "/shose/shose-1.webp",
+    "size": ["43", "44", "45", "46"],
+    "category": "shoes",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Casual Suede Loafers",
+    "description": "Comfortable suede loafers with a relaxed style, ideal for casual outings or smart-casual events.",
+    "price": 32.86,
+    "image": "/shose/shose-2.webp",
+    "size": ["40", "41", "44", "45", "46"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Polished Oxford Shoes",
+    "description": "Sleek and polished oxford shoes, designed for elegance and sophistication in formal attire.",
+    "price": 71.55,
+    "image": "/shose/shose-3.webp",
+    "size": ["44", "45", "46", "47", "48"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Modern Slip-On Sneakers",
+    "description": "Stylish slip-on sneakers, blending comfort and contemporary design for everyday wear.",
+    "price": 66.99,
+    "image": "/shose/shose-4.webp",
+    "size": ["40", "41", "45", "46"],
+    "category": "shoes",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Premium Leather Brogues",
+    "description": "Intricately detailed leather brogues, offering a refined look for both business and formal occasions.",
+    "price": 92.83,
+    "image": "/shose/shose-5.webp",
+    "size": ["45", "46"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Urban Casual Sneakers",
+    "description": "Versatile casual sneakers with a modern edge, perfect for city life and relaxed settings.",
+    "price": 99.25,
+    "image": "/shose/shose-6.webp",
+    "size": ["40", "41", "46"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Rugged Leather Boots",
+    "description": "Durable leather boots designed for both style and functionality, ideal for outdoor or casual wear.",
+    "price": 68.49,
+    "image": "/shose/shose-7.webp",
+    "size": ["40", "44", "45", "46"],
+    "category": "shoes",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Luxury Monk Strap Shoes",
+    "description": "Elegant monk strap shoes with a sleek buckle design, perfect for upscale events and professional looks.",
+    "price": 139.72,
+    "image": "/shose/shose-8.webp",
+    "size": ["40", "41", "42"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Minimalist Leather Sneakers",
+    "description": "Sleek minimalist leather sneakers, offering a clean and modern look for versatile styling.",
+    "price": 100.04,
+    "image": "/shose/shose-9.webp",
+    "size": ["40", "41", "42", "43"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Athletic Performance Sneakers",
+    "description": "Lightweight and durable sneakers designed for active lifestyles and casual comfort.",
+    "price": 26.25,
+    "image": "/shose/shose-10.webp",
+    "size": ["40", "41", "42", "43", "44", "45", "46", "47", "48"],
+    "category": "shoes",
+    "gender": "men"
+  },
+  {
+    "name": "Executive Chelsea Boots",
+    "description": "Sophisticated Chelsea boots crafted for a polished look, ideal for business or evening wear.",
+    "price": 144.34,
+    "image": "/shose/shose-11.webp",
+    "size": ["44", "45", "46"],
+    "category": "shoes",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  }
+]

@@ -25,5 +25,5 @@ dist-ssr
 
 .env
 
-/public/*.json
-/public/*/*.webp
+# /public/*.json
+# /public/*/*.webp

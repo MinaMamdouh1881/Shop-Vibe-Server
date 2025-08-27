@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Elegant Midi Pleated Skirt",
+    "description": "A sophisticated midi skirt with delicate pleats, crafted from lightweight chiffon for a flowy, feminine look. Perfect for both casual and formal occasions.",
+    "price": 53.62,
+    "image": "/skirt/skirt-1.webp",
+    "size": ["36", "38", "40"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Bohemian High-Waist Maxi Skirt",
+    "description": "Embrace free-spirited style with this high-waist maxi skirt, featuring a vibrant floral print and soft cotton blend for all-day comfort.",
+    "price": 77.45,
+    "image": "/skirt/skirt-2.webp",
+    "size": ["36", "38", "44"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Chic A-Line Leather Skirt",
+    "description": "Make a bold statement with this sleek A-line skirt made from premium faux leather, offering a modern edge for evening outings.",
+    "price": 86.95,
+    "image": "/skirt/skirt-3.webp",
+    "size": ["36", "42", "44"],
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Luxury Satin Wrap Skirt",
+    "description": "This luxurious satin wrap skirt exudes elegance with its smooth texture and adjustable tie, ideal for upscale events or stylish office wear.",
+    "price": 144.93,
+    "image": "/skirt/skirt-4.webp",
+    "size": ["40", "42", "44"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Casual Denim Mini Skirt",
+    "description": "A versatile denim mini skirt with a relaxed fit, featuring subtle distressing for a trendy, laid-back vibe perfect for everyday wear.",
+    "price": 68.99,
+    "image": "/skirt/skirt-5.webp",
+    "size": ["38", "40", "42"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Tailored Pencil Skirt",
+    "description": "This form-fitting pencil skirt is crafted from stretch fabric, offering a polished look for professional settings or chic evening plans.",
+    "price": 104.96,
+    "image": "/skirt/skirt-6.webp",
+    "size": ["36", "40", "44"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Playful Polka Dot Skirt",
+    "description": "Add a touch of fun to your wardrobe with this polka dot skirt, featuring a flared silhouette and lightweight fabric for effortless style.",
+    "price": 63.24,
+    "image": "/skirt/skirt-7.webp",
+    "size": ["36", "38"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Velvet Midi Skirt",
+    "description": "Indulge in luxury with this plush velvet midi skirt, designed with a soft sheen and comfortable fit for cooler weather elegance.",
+    "price": 85.52,
+    "image": "/skirt/skirt-8.webp",
+    "size": ["42", "44"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Flowy Tiered Maxi Skirt",
+    "description": "This tiered maxi skirt combines breezy layers with a soft linen blend, perfect for creating an effortless, boho-chic look.",
+    "price": 145.94,
+    "image": "/skirt/skirt-9.webp",
+    "size": ["36", "38", "40", "42", "44"],
+    "sales": 10,
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Structured Pleated Mini Skirt",
+    "description": "A preppy mini skirt with crisp pleats, crafted from durable cotton for a structured yet playful addition to your wardrobe.",
+    "price": 87.72,
+    "image": "/skirt/skirt-10.webp",
+    "size": ["36", "38", "40", "42"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Soft Knit Midi Skirt",
+    "description": "Cozy yet stylish, this knit midi skirt offers a stretchy, comfortable fit with a subtle ribbed texture for casual elegance.",
+    "price": 72.37,
+    "image": "/skirt/skirt-11.webp",
+    "size": ["36", "38", "40", "44"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Embroidered Boho Skirt",
+    "description": "This bohemian skirt features intricate embroidery and a flowing silhouette, crafted from breathable cotton for a unique, artisanal look.",
+    "price": 132.08,
+    "image": "/skirt/skirt-12.webp",
+    "size": ["36", "38", "42", "44"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "High-Waist Tailored Skirt",
+    "description": "Elevate your wardrobe with this high-waist skirt, designed with clean lines and a tailored fit for a timeless, professional aesthetic.",
+    "price": 80.7,
+    "image": "/skirt/skirt-13.webp",
+    "size": ["36", "40", "42", "44"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Flared Linen Skirt",
+    "description": "A breezy linen skirt with a flared silhouette, perfect for warm days and effortless styling with a lightweight, natural feel.",
+    "price": 70.18,
+    "image": "/skirt/skirt-14.webp",
+    "size": ["38", "40", "42", "44"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Minimalist Wrap Skirt",
+    "description": "This minimalist wrap skirt offers a sleek, adjustable design with soft cotton fabric, ideal for versatile and chic outfits.",
+    "price": 66.11,
+    "image": "/skirt/skirt-15.webp",
+    "size": ["36", "44"],
+    "category": "skirt",
+    "gender": "women"
+  },
+  {
+    "name": "Bold Plaid Midi Skirt",
+    "description": "Make a statement with this bold plaid midi skirt, featuring a structured fit and vibrant pattern for a standout, preppy style.",
+    "price": 116.81,
+    "image": "/skirt/skirt-16.webp",
+    "size": ["40"],
+    "category": "skirt",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Everyday Cotton Skirt",
+    "description": "A simple yet stylish cotton skirt with a relaxed fit, perfect for everyday wear with a touch of casual charm.",
+    "price": 38.9,
+    "image": "/skirt/skirt-17.webp",
+    "size": ["38", "40"],
+    "sales": 10,
+    "category": "skirt",
+    "gender": "women"
+  }
+]

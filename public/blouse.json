@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Women's Elegant Chiffon Blouse",
+    "description": "A lightweight chiffon blouse with a flowy design, perfect for casual or semi-formal occasions.",
+    "price": 46.25,
+    "image": "/blouse/blouse-1.webp",
+    "size": ["MD", "LG", "2X"],
+    "category": "blouse",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Floral Print Blouse",
+    "description": "A vibrant floral blouse, crafted for a feminine and stylish look, ideal for spring outings.",
+    "price": 44.45,
+    "image": "/blouse/blouse-2.webp",
+    "size": ["SM", "MD", "LG", "2X"],
+    "category": "blouse",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Silk Formal Blouse",
+    "description": "A luxurious silk blouse designed for elegance and sophistication, perfect for professional settings.",
+    "price": 129.82,
+    "image": "/blouse/blouse-3.webp",
+    "size": ["SM", "MD", "XL"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Casual Cotton Blouse",
+    "description": "A comfortable cotton blouse with a relaxed fit, ideal for everyday wear.",
+    "price": 123.27,
+    "image": "/blouse/blouse-4.webp",
+    "size": ["MD", "LG", "2X"],
+    "category": "blouse",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Tailored Linen Blouse",
+    "description": "A tailored linen blouse, combining breathability and a chic look for warm weather.",
+    "price": 76.61,
+    "image": "/blouse/blouse-5.webp",
+    "size": ["MD", "XL", "2X"],
+    "category": "blouse",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Ruffled Sleeve Blouse",
+    "description": "A stylish blouse with ruffled sleeves, adding a touch of charm to your wardrobe.",
+    "price": 83.55,
+    "image": "/blouse/blouse-6.webp",
+    "size": ["MD", "XL", "2X", "3X"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Classic White Blouse",
+    "description": "A timeless white blouse, versatile for both casual and formal occasions.",
+    "price": 99.29,
+    "image": "/blouse/blouse-7.webp",
+    "size": ["XL", "2X"],
+    "category": "blouse",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Off-Shoulder Blouse",
+    "description": "An elegant off-shoulder blouse, perfect for a trendy and feminine look.",
+    "price": 75.31,
+    "image": "/blouse/blouse-8.webp",
+    "size": ["XL", "2X"],
+    "category": "blouse",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Satin Evening Blouse",
+    "description": "A luxurious satin blouse designed for evening wear, offering a sleek and polished look.",
+    "price": 141.51,
+    "image": "/blouse/blouse-9.webp",
+    "size": ["SM", "MD"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Casual Striped Blouse",
+    "description": "A casual striped blouse, perfect for a relaxed yet stylish appearance.",
+    "price": 35.63,
+    "image": "/blouse/blouse-10.webp",
+    "size": ["MD", "LG", "2X"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Boho Chic Blouse",
+    "description": "A bohemian-inspired blouse with intricate details, ideal for a free-spirited look.",
+    "price": 105.67,
+    "image": "/blouse/blouse-11.webp",
+    "size": ["SM", "MD", "LG", "XL"],
+    "category": "blouse",
+    "featured": true,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Polka Dot Blouse",
+    "description": "A playful polka dot blouse, adding a fun and trendy vibe to your wardrobe.",
+    "price": 64.54,
+    "image": "/blouse/blouse-12.webp",
+    "size": ["SM", "MD", "LG", "2X"],
+    "category": "blouse",
+    "sales": 10,
+    "gender": "women"
+  },
+  {
+    "name": "Women's Minimalist Blouse",
+    "description": "A sleek minimalist blouse, perfect for a clean and modern aesthetic.",
+    "price": 62.82,
+    "image": "/blouse/blouse-13.webp",
+    "size": ["MD", "LG", "2X"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Embroidered Blouse",
+    "description": "A beautifully embroidered blouse, combining tradition and style for a unique look.",
+    "price": 64.84,
+    "image": "/blouse/blouse-14.webp",
+    "size": ["MD", "LG", "XL", "2X"],
+    "category": "blouse",
+    "gender": "women"
+  },
+  {
+    "name": "Women's Lace-Trim Blouse",
+    "description": "A delicate blouse with lace trim, perfect for adding a touch of elegance to any outfit.",
+    "price": 51.45,
+    "image": "/blouse/blouse-15.webp",
+    "size": ["SM", "MD", "2X"],
+    "category": "blouse",
+    "featured": true,
+    "gender": "women"
+  }
+]

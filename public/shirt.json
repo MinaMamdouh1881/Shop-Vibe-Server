@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Classic Men's Cotton Shirt",
+    "description": "A versatile men's cotton shirt, perfect for both casual and formal occasions. Crafted with premium quality fabric for comfort and durability.",
+    "price": 89.99,
+    "image": "/shirt/shirt-1.webp",
+    "size": ["SM", "MD", "LG", "XL", "2X"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Slim Fit Casual Shirt",
+    "description": "A stylish slim fit shirt designed for modern men. Made with breathable fabric, ideal for everyday wear.",
+    "price": 29.9,
+    "image": "/shirt/shirt-2.webp",
+    "size": ["SM", "MD", "XL", "2X", "3X"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Formal Dress Shirt",
+    "description": "Elevate your wardrobe with this elegant formal dress shirt, designed for a sharp and sophisticated look.",
+    "price": 78.37,
+    "image": "/shirt/shirt-3.webp",
+    "size": ["SM", "MD", "LG"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Casual Checkered Shirt",
+    "description": "A trendy checkered shirt for men, combining style and comfort for casual outings.",
+    "price": 33.03,
+    "image": "/shirt/shirt-4.webp",
+    "size": ["SM", "MD", "XL"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Premium Polo Shirt",
+    "description": "A premium polo shirt for men, offering a blend of comfort and elegance for any occasion.",
+    "price": 59.38,
+    "image": "/shirt/shirt-5.webp",
+    "size": ["MD", "XL", "2X", "3X"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Denim Shirt",
+    "description": "A rugged yet stylish denim shirt, perfect for a casual and laid-back look.",
+    "price": 62.86,
+    "image": "/shirt/shirt-6.webp",
+    "size": ["MD", "XL", "2X"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Luxury Linen Shirt",
+    "description": "Experience luxury with this lightweight linen shirt, designed for breathability and sophistication.",
+    "price": 114.69,
+    "image": "/shirt/shirt-7.webp",
+    "size": ["MD", "XL", "3X"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Striped Casual Shirt",
+    "description": "A comfortable striped shirt, perfect for casual gatherings or a relaxed day out.",
+    "price": 58.1,
+    "image": "/shirt/shirt-8.webp",
+    "size": ["MD", "LG", "XL"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Tailored Fit Shirt",
+    "description": "A tailored fit shirt for men, designed to provide a sleek and modern silhouette.",
+    "price": 127.49,
+    "image": "/shirt/shirt-9.webp",
+    "size": ["SM", "MD", "XL", "3X"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Printed Casual Shirt",
+    "description": "Add a pop of style with this printed casual shirt, ideal for a vibrant and trendy look.",
+    "price": 49.84,
+    "image": "/shirt/shirt-10.webp",
+    "size": ["SM", "MD", "LG", "XL"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Formal Oxford Shirt",
+    "description": "A classic Oxford shirt for men, offering timeless style and superior comfort.",
+    "price": 143.47,
+    "image": "/shirt/shirt-11.webp",
+    "size": ["MD", "XL", "2X"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Lightweight Casual Shirt",
+    "description": "A lightweight and breathable casual shirt, perfect for warm weather and relaxed vibes.",
+    "price": 82.74,
+    "image": "/shirt/shirt-12.webp",
+    "size": ["MD", "LG", "XL"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  },
+  {
+    "name": "Men's Premium Dress Shirt",
+    "description": "A premium dress shirt crafted for elegance and comfort, ideal for formal events.",
+    "price": 140.8,
+    "image": "/shirt/shirt-13.webp",
+    "size": ["SM", "MD", "XL", "2X"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Classic Polo Shirt",
+    "description": "A classic polo shirt for men, combining simplicity with a refined look.",
+    "price": 64.77,
+    "image": "/shirt/shirt-14.webp",
+    "size": ["SM", "MD", "LG"],
+    "category": "shirt",
+    "gender": "men"
+  },
+  {
+    "name": "Men's Casual Flannel Shirt",
+    "description": "A cozy flannel shirt for men, perfect for cooler days and a rugged style.",
+    "price": 116.03,
+    "image": "/shirt/shirt-15.webp",
+    "size": ["SM", "MD", "2X", "3X"],
+    "category": "shirt",
+    "featured": true,
+    "sales": 10,
+    "gender": "men"
+  }
+]
