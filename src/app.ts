@@ -9,6 +9,7 @@ import './config/passport';
 import productRouter from './routes/product.route';
 import cartAndFavRouter from './routes/cartAndFav.route';
 import checkoutRouter from './routes/checkout.route';
+import pagesRouter from './routes/pages.route';
 
 const app = express();
 
@@ -62,6 +63,7 @@ connectToDb();
 app.get('/', (req, res) => {
   res.send('Welcome');
 });
+app.use('/page', pagesRouter);
 app.use('/auth', authRouter);
 app.use('/products', productRouter);
 app.use('/cartAndFav', cartAndFavRouter);
