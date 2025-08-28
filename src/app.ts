@@ -32,8 +32,22 @@ app.use(
 import passport from 'passport';
 app.use(
   cors({
-    origin: '*',
+    origin: [
+      process.env.CLIENT_URI!,
+      'http://localhost:5173',
+      'https://shop-vibe-client-ejj4.vercel.app',
+    ],
     credentials: true,
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: [
+      'Origin',
+      'X-Requested-With',
+      'Content-Type',
+      'Accept',
+      'Authorization',
+      'Cookie',
+    ],
   })
 );
 
