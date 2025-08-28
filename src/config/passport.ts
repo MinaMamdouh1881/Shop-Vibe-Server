@@ -20,14 +20,41 @@ passport.use(
       done: Function
     ) => {
       try {
-        let user = await User.findOne({ googleId: profile.id });
-        if (!user) {
-          user = await User.create({
-            googleId: profile.id,
-            userName: profile.displayName,
-          });
-        }
-        done(null, user);
+        const user = await User.findOneAndUpdate(
+          { googleId: profile.id },
+          {
+            $setOnInsert: {
+              userName: profile.displayName,
+              googleId: profile.id,
+            },
+          },
+          { new: true, upsert: true }
+        );
+        const [cart, wishList] = await Promise.all([
+          Cart.findOneAndUpdate(
+            { user: user._id },
+            { $setOnInsert: { user: user._id, items: [] } },
+            { new: true, upsert: true }
+          ).populate('items.product', 'name price image'),
+
+          WishList.findOneAndUpdate(
+            { user: user._id },
+            { $setOnInsert: { user: user._id, items: [] } },
+            { new: true, upsert: true }
+          ).populate('items', 'name price image'),
+        ]);
+        const fullUser = {
+          success: true,
+          token: await createToken({ id: user._id, rule: user.rule }),
+          user: {
+            id: user._id,
+            userName: user.userName,
+            rule: user.rule,
+            myFavorites: wishList?.items || [],
+            myCart: cart?.items || [],
+          },
+        };
+        done(null, fullUser);
       } catch (err) {
         done(err, null);
       }
@@ -50,20 +77,41 @@ passport.use(
       done: Function
     ) => {
       try {
-        let user = await User.findOne({ facebookId: profile.id });
+        const user = await User.findOneAndUpdate(
+          { facebookId: profile.id },
+          {
+            $setOnInsert: {
+              userName: profile.displayName,
+              facebookId: profile.id,
+            },
+          },
+          { new: true, upsert: true }
+        );
+        const [cart, wishList] = await Promise.all([
+          Cart.findOneAndUpdate(
+            { user: user._id },
+            { $setOnInsert: { user: user._id, items: [] } },
+            { new: true, upsert: true }
+          ).populate('items.product', 'name price image'),
 
-        if (!user) {
-          user = await User.create({
-            facebookId: profile.id,
-            userName: profile.displayName,
-          });
-          await Promise.all([
-            Cart.create({ user: user._id }),
-            WishList.create({ user: user._id }),
-          ]);
-        }
-
-        done(null, user);
+          WishList.findOneAndUpdate(
+            { user: user._id },
+            { $setOnInsert: { user: user._id, items: [] } },
+            { new: true, upsert: true }
+          ).populate('items', 'name price image'),
+        ]);
+        const fullUser = {
+          success: true,
+          token: await createToken({ id: user._id, rule: user.rule }),
+          user: {
+            id: user._id,
+            userName: user.userName,
+            rule: user.rule,
+            myFavorites: wishList?.items || [],
+            myCart: cart?.items || [],
+          },
+        };
+        done(null, fullUser);
       } catch (err) {
         done(err, null);
       }
@@ -72,44 +120,13 @@ passport.use(
 );
 
 passport.serializeUser((user: any, done) => {
-  done(null, user.id);
+  done(null, user.user.id);
 });
 
-passport.deserializeUser(async (id: string, done) => {
+
+passport.deserializeUser(async (user: object, done) => {
   try {
-    const user = await User.findById(id);
-
-    const [token, cart, wishList] = await Promise.all([
-      createToken({
-        id: user._id,
-        rule: user.rule,
-      }),
-
-      Cart.findOneAndUpdate(
-        { user: user._id },
-        { $setOnInsert: { user: user._id, items: [] } },
-        { new: true, upsert: true }
-      ).populate('items.product', 'name price image'),
-
-      WishList.findOneAndUpdate(
-        { user: user._id },
-        { $setOnInsert: { user: user._id, items: [] } },
-        { new: true, upsert: true }
-      ).populate('items', 'name price image'),
-    ]);
-
-    const res = {
-      success: true,
-      token,
-      user: {
-        id: user._id,
-        userName: user.userName,
-        rule: user.rule,
-        myFavorites: wishList?.items ? wishList.items : [],
-        myCart: cart?.items ? cart.items : [],
-      },
-    };
-    done(null, res);
+    done(null, user);
   } catch (err) {
     done(err, null);
   }
