@@ -35,8 +35,8 @@ router.get(
 );
 
 router.get('/login/success', (req, res) => {
-  console.log(req);
-  
+  console.log(req.user);
+
   if (req.user) {
     res.redirect(
       `${process.env.CLIENT_URI!}?res=${encodeURIComponent(
