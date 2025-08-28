@@ -2,7 +2,6 @@ import express from 'express';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import cors from 'cors';
-import passport from 'passport';
 import connectToDb from './lib/connectToDb';
 import authRouter from './routes/auth.route';
 require('dotenv').config();
@@ -30,6 +29,7 @@ app.use(
     },
   })
 );
+import passport from 'passport';
 app.use(
   cors({
     origin: '*',
