@@ -84,14 +84,18 @@ passport.deserializeUser(async (id: string, done) => {
         id: user._id,
         rule: user.rule,
       }),
-      Cart.findOne({ user: user._id }).populate(
-        'items.product',
-        'name price image'
-      ),
-      WishList.findOne({ user: user._id }).populate(
-        'items',
-        'name price image'
-      ),
+
+      Cart.findOneAndUpdate(
+        { user: user._id },
+        { $setOnInsert: { user: user._id, items: [] } },
+        { new: true, upsert: true }
+      ).populate('items.product', 'name price image'),
+
+      WishList.findOneAndUpdate(
+        { user: user._id },
+        { $setOnInsert: { user: user._id, items: [] } },
+        { new: true, upsert: true }
+      ).populate('items', 'name price image'),
     ]);
 
     const res = {
@@ -101,8 +105,8 @@ passport.deserializeUser(async (id: string, done) => {
         id: user._id,
         userName: user.userName,
         rule: user.rule,
-        myFavorites: wishList.items,
-        myCart: cart.items,
+        myFavorites: wishList?.items ? wishList.items : [],
+        myCart: cart?.items ? cart.items : [],
       },
     };
     done(null, res);

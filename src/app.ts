@@ -1,10 +1,10 @@
 import express from 'express';
 import session from 'express-session';
+import MongoStore from 'connect-mongo';
 import cors from 'cors';
 import passport from 'passport';
 import connectToDb from './lib/connectToDb';
 import authRouter from './routes/auth.route';
-import verifyToken from './middlewares/verifyToken';
 require('dotenv').config();
 import './config/passport';
 import productRouter from './routes/product.route';
@@ -18,14 +18,16 @@ app.use(
     secret: process.env.SESSION_SECRET || 'yourSecretKey',
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URI!,
+      collectionName: 'sessions',
+    }),
     cookie: {
-      secure: false, // true لو على HTTPS
+      secure: process.env.NODE_ENV === 'production',
       maxAge: 1000 * 60 * 60 * 24,
     },
   })
 );
-
-// app.use(cors({ origin: process.env.CLIENT_URI, credentials: true }));
 app.use(
   cors({
     origin: '*',
@@ -47,10 +49,6 @@ app.get('/', (req, res) => {
 app.use('/auth', authRouter);
 app.use('/products', productRouter);
 app.use('/cartAndFav', cartAndFavRouter);
-// app.use('/checkout', (req, res) => {
-//   res.json({ msg: 'Welcome' });
-//   return;
-// });
 app.use('/checkout', checkoutRouter);
 
 export default app;
