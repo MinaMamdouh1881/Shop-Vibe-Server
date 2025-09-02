@@ -36,7 +36,7 @@ app.use(
     origin: [
       process.env.CLIENT_URI!,
       'http://localhost:5173',
-      'https://shop-vibe-client-ejj4.vercel.app',
+      'https://shop-vibe-client.vercel.app',
     ],
     credentials: true,
     optionsSuccessStatus: 200,
